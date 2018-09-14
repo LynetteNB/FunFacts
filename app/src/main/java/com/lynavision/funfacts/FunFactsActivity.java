@@ -2,12 +2,16 @@ package com.lynavision.funfacts;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class FunFactsActivity extends AppCompatActivity {
+    public static final String TAG = FunFactsActivity.class.getSimpleName();
+
     private FactBook factBook = new FactBook();
     private ColorWheel colorWheel = new ColorWheel();
 
@@ -35,6 +39,8 @@ public class FunFactsActivity extends AppCompatActivity {
         };
 
         funFactButton.setOnClickListener(listener);
+        Toast.makeText(this, "This is a toast message!", Toast.LENGTH_LONG).show();
+        Log.d(TAG, "We're logging from the OnCreate() method!");
     }
 
 
